@@ -16,7 +16,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-  $releases = 'https://www.derivative.ca/088/Downloads/'
+  $releases = 'https://derivative.ca/download/archive'
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
   $url32 = $download_page.Links | ? href -match 'TouchDesigner088.[0-9]+\.32-Bit\.exe' | % href | select -First 1
   $url64 = $download_page.Links | ? href -match 'TouchDesigner088.[0-9]+\.64-Bit\.exe' | % href | select -First 1
